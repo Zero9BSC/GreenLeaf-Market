@@ -1,0 +1,125 @@
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para la página de inicio */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para la lista de productos destacados */
+.featured-products {
+    margin: 20px 0;
+}
+
+.featured-products h2 {
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Estilos para la lista de ofertas especiales */
+.special-offers {
+    margin: 20px 0;
+}
+
+.special-offers h2 {
+    text-align: center;
+}
+
+.offer-list {
+    display: flex;
+    justify-content: center;
+}
+
+.offer {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Estilos para la página de detalles del producto */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-image img {
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Estilos para el carrito de compras */
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cart h2 {
+    text-align: center;
+}
+
+.cart-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
