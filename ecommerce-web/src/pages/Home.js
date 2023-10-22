@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  const [cartItems, setCartItems] = useState([]);
+
   const featuredProducts = [
     { id: 1, name: 'Producto 1', price: 19.99, image: 'product1.jpg' },
     { id: 2, name: 'Producto 2', price: 29.99, image: 'product2.jpg' },
@@ -14,10 +16,14 @@ const Home = () => {
     { id: 5, name: 'Oferta Especial 2', price: 14.99, image: 'special2.jpg' },
   ];
 
+  const handleAddToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
+
   return (
     <div className="home">
       <Header />
-      {/* Sección de Productos Destacados */}
+
       <section className="featured-products">
         <h2>Productos Destacados</h2>
         <div className="product-list">
@@ -26,13 +32,12 @@ const Home = () => {
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>${product.price.toFixed(2)}</p>
-              <button>Añadir al carrito</button>
+              <button onClick={() => handleAddToCart(product)}>Añadir al carrito</button>
             </div>
           ))}
         </div>
       </section>
-      
-      {/* Sección de Ofertas Especiales */}
+
       <section className="special-offers">
         <h2>Ofertas Especiales</h2>
         <div className="offer-list">
@@ -41,7 +46,7 @@ const Home = () => {
               <img src={offer.image} alt={offer.name} />
               <h3>{offer.name}</h3>
               <p>${offer.price.toFixed(2)}</p>
-              <button>Añadir al carrito</button>
+              <button onClick={() => handleAddToCart(offer)}>Añadir al carrito</button>
             </div>
           ))}
         </div>
@@ -53,4 +58,3 @@ const Home = () => {
 };
 
 export default Home;
-
