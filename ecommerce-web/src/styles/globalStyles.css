@@ -1,18 +1,15 @@
-/* Estilos para el cuerpo del documento */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Estilos para la página de inicio */
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Estilos para la lista de productos destacados */
 .featured-products {
     margin: 20px 0;
 }
@@ -34,7 +31,6 @@ body {
     text-align: center;
 }
 
-/* Estilos para la lista de ofertas especiales */
 .special-offers {
     margin: 20px 0;
 }
@@ -56,7 +52,6 @@ body {
     text-align: center;
 }
 
-/* Estilos para la página de detalles del producto */
 .product-details {
     display: flex;
     flex-direction: column;
@@ -83,7 +78,6 @@ body {
     justify-content: center;
 }
 
-/* Estilos para el carrito de compras */
 .cart {
     display: flex;
     flex-direction: column;

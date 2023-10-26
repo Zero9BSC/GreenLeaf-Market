@@ -1,24 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import '../styles/header.css';
 
-const Header = () => {
-    return (
-        <header>
-            {/* Agregar el contenido del encabezado, como el logotipo y la barra de navegación */}
-            <div>
-                {/* Aquí va el logotipo */}
-                <h1>GreenLeaf Market</h1>
-            </div>
-            <nav>
-                {/* Aquí van los enlaces de navegación */}
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/productos">Productos</a></li>
-                    {/* Agrega más enlaces según la estructura de la aplicación */}
-                </ul>
-            </nav>
-        </header>
-    );
+const Header = ({ cartItems }) => {
+  const cartItemCount = cartItems ? cartItems.reduce((acc, item) => acc + item.quantity, 0) : 0;
+
+  return (
+    <header className="header">
+      <div className="logo">
+        <img src={logo} alt="GreenLeaf Market" />
+      </div>
+      <nav>
+        <ul className="navigation-links">
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/cart" className="cart-icon">
+              <span role="img" aria-label="Carrito">🛒</span>
+              {cartItemCount > 0 && <span className="cart-count">{cartItemCount}</span>}
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;
