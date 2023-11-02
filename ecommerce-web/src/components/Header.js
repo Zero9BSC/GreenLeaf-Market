@@ -22,6 +22,9 @@ const Header = ({ cartItems }) => {
               {cartItemCount > 0 && <span className="cart-count">{cartItemCount}</span>}
             </Link>
           </li>
+          <li>
+            <Link to="/login">Login or Register</Link>
+          </li>
         </ul>
       </nav>
     </header>

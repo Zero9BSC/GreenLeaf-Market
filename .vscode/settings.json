@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Initial Structure",
-        "ecommerce-web (Creating Initial Components)"
+        "ecommerce-web (Creating Initial Components)",
+        "ecommerce-web(Login/Sign up)"
     ]
 }
