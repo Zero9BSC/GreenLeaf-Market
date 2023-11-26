@@ -23,7 +23,7 @@ const Header = ({ cartItems }) => {
             </Link>
           </li>
           <li>
-            <Link to="/login">Login or Register</Link>
+            <Link to="/login">Login or Sign Up</Link>
           </li>
         </ul>
       </nav>
