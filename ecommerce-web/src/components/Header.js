@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import logo from '../assets/logo.png';
 import '../styles/header.css';
 
 const Header = ({ cartItems }) => {
+  const [user, setUser] = useState(null);
   const cartItemCount = cartItems ? cartItems.reduce((acc, item) => acc + item.quantity, 0) : 0;
+
+  // Verifica si hay un usuario autenticado cuando el componente se monta
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    // Limpia el efecto cuando el componente se desmonta
+    return () => unsubscribe();
+  }, []);
+
+  // Función para cerrar sesión
+  const handleLogout = async () => {
+    const auth = getAuth();
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
+  };
 
   return (
     <header className="header">
@@ -23,7 +46,14 @@ const Header = ({ cartItems }) => {
             </Link>
           </li>
           <li>
-            <Link to="/login">Login or Sign Up</Link>
+            {user ? (
+              <>
+                <span>Hola, {user.displayName || user.email.split('@')[0]}</span>
+                <span> </span><button onClick={handleLogout}>Cerrar Sesión</button>
+              </>
+            ) : (
+              <Link to="/login">Iniciar Sesión o Registrarse</Link>
+            )}
           </li>
         </ul>
       </nav>
