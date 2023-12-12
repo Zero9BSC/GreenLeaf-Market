@@ -29,6 +29,24 @@ body {
     padding: 10px;
     margin: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+}
+
+.product-img {
+    max-width: 100%;
+    max-height: 170px; /* Establece una altura fija para todas las imágenes */
+    object-fit: contain; /* Utiliza 'contain' para ajustar la imagen dentro del contenedor */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Añade un pequeño espacio entre la imagen y el texto */
+}
+
+.product h3 {
+    font-size: 16px;
 }
 
 .special-offers {
@@ -62,14 +80,6 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-}
-
-.product-image img {
-    max-width: 200px;
-    max-height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 20px;
 }
 
 .product-info {
